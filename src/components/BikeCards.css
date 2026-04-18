@@ -1,0 +1,297 @@
+/* ========================================
+   Bikes Section
+   ======================================== */
+.bikes-section {
+  padding: 6rem 5% 4rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.bikes-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.section-tag {
+  display: inline-block;
+  background: linear-gradient(135deg, rgba(255, 106, 0, 0.15), rgba(255, 106, 0, 0.05));
+  color: var(--primary-color);
+  font-weight: 700;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  padding: 0.5rem 1.25rem;
+  border-radius: 50px;
+  margin-bottom: 1rem;
+}
+
+.section-title {
+  font-size: 3rem;
+  font-weight: 800;
+  color: var(--text-dark);
+  margin-bottom: 1rem;
+  line-height: 1.15;
+}
+
+.section-subtitle {
+  font-size: 1.15rem;
+  color: var(--text-gray);
+  max-width: 540px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* ========================================
+   Card Grid
+   ======================================== */
+.bikes-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+/* ========================================
+   Individual Card
+   ======================================== */
+.bike-card {
+  background: var(--white);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              box-shadow 0.4s ease;
+  animation: cardFadeIn 0.6s ease-out both;
+  position: relative;
+}
+
+.bike-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
+}
+
+/* ========================================
+   Card Image
+   ======================================== */
+.card-image-wrapper {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+  background: linear-gradient(135deg, #f1f5f9, #e2e8f0);
+}
+
+.card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.bike-card:hover .card-image {
+  transform: scale(1.08);
+}
+
+/* Quick View Overlay */
+.card-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(30, 41, 59, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+
+.bike-card:hover .card-overlay {
+  opacity: 1;
+}
+
+.quick-view-btn {
+  padding: 0.75rem 1.5rem;
+  background: var(--white);
+  color: var(--text-dark);
+  border: none;
+  border-radius: 50px;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transform: translateY(12px);
+  transition: transform 0.35s ease, background-color 0.3s ease, color 0.3s ease;
+}
+
+.bike-card:hover .quick-view-btn {
+  transform: translateY(0);
+}
+
+.quick-view-btn:hover {
+  background-color: var(--primary-color);
+  color: var(--white);
+}
+
+/* ========================================
+   Card Badges
+   ======================================== */
+.card-badge {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  padding: 0.35rem 0.85rem;
+  border-radius: 50px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  z-index: 2;
+}
+
+.badge-sale {
+  background: linear-gradient(135deg, #ff6a00, #ee5a00);
+  color: var(--white);
+}
+
+.badge-new {
+  background: linear-gradient(135deg, #10b981, #059669);
+  color: var(--white);
+}
+
+.badge-hot {
+  background: linear-gradient(135deg, #ef4444, #dc2626);
+  color: var(--white);
+}
+
+.badge-premium {
+  background: linear-gradient(135deg, #8b5cf6, #7c3aed);
+  color: var(--white);
+}
+
+/* ========================================
+   Card Body
+   ======================================== */
+.card-body {
+  padding: 1.5rem;
+}
+
+.card-category {
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--primary-color);
+  margin-bottom: 0.4rem;
+  display: block;
+}
+
+.card-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 0.5rem;
+  line-height: 1.3;
+}
+
+/* Rating */
+.card-rating {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  margin-bottom: 1rem;
+}
+
+.star-icon {
+  color: #f59e0b;
+}
+
+.rating-count {
+  font-size: 0.8rem;
+  color: var(--text-gray);
+  margin-left: 4px;
+  font-weight: 500;
+}
+
+/* Price Row */
+.card-price-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.price-group {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+}
+
+.card-price {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--text-dark);
+}
+
+.card-old-price {
+  font-size: 0.95rem;
+  color: var(--text-gray);
+  text-decoration: line-through;
+  font-weight: 500;
+}
+
+/* Add to Cart Button */
+.add-to-cart-btn {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #e2e8f0;
+  border-radius: 12px;
+  background: transparent;
+  color: var(--text-dark);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.add-to-cart-btn:hover {
+  background: var(--primary-color);
+  border-color: var(--primary-color);
+  color: var(--white);
+  transform: scale(1.08);
+}
+
+/* ========================================
+   Animations
+   ======================================== */
+@keyframes cardFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ========================================
+   Responsive
+   ======================================== */
+@media (max-width: 1024px) {
+  .bikes-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .section-title {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .bikes-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  .bikes-section {
+    padding: 4rem 4%;
+  }
+  .section-title {
+    font-size: 2rem;
+  }
+}
